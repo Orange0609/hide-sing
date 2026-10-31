@@ -120,9 +120,15 @@
 
     document.getElementById("songSubtitle").textContent = songSubtitle;
 
-    const musicPlayer = document.getElementById("musicPlayer");
+const musicPlayer = document.getElementById("musicPlayer");
 
-    musicPlayer.src = musicUrl;
+musicPlayer.src = musicUrl;
+
+musicPlayer.load();
+
+musicPlayer.addEventListener("error", function() {
+  console.log("音樂載入失敗：", musicPlayer.error);
+});
 
 
     // ==============================
